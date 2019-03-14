@@ -101,6 +101,38 @@ const getState = ({ getStore, setStore }) => {
 					productPrice: "47.99",
 					productDescription: "Short description of item 3"
 				}
+			],
+			blogInfo: [
+				{
+					blogTitle: "Blog 1",
+					blogSummary:
+						"First couple of Lines of the blog genrally this will contain important information",
+					blogAuthor: "Angelo Martinez",
+					blogDate: "October 10 1996",
+					blogFavorite: false,
+					blogImage:
+						"https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
+				},
+				{
+					blogTitle: "Blog 2",
+					blogSummary:
+						"First couple of Lines of the blog genrally this will contain important information, different from blog 2 and three",
+					blogAuthor: "Joe Martinez",
+					blogDate: "October 11 1997",
+					blogFavorite: false,
+					blogImage:
+						"http://demo.warptheme.com/images/placeholder_600x400_2.svg"
+				},
+				{
+					blogTitle: "Blog 3",
+					blogSummary:
+						"First couple of Lines of the blog genrally this will contain important information, maybe has more lines than the next post checking length.",
+					blogAuthor: "Gunther Martinez",
+					blogDate: "October 12 1998",
+					blogFavorite: false,
+					blogImage:
+						"https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
+				}
 			]
 		},
 		actions: {

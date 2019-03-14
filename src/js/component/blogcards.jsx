@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../styles/blogstyle.css";
-export default function BlogCard(props) {
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+library.add(faStar);
+import PropTypes from "prop-types";
+
+export default function BlogCard(title, summary, author, date) {
 	return (
 		<div>
 			<div
@@ -17,10 +23,20 @@ export default function BlogCard(props) {
 
 					<p className="font-weight-normal">Author name</p>
 					<p className="text-muted">
-						Publish Date star button to fav
+						Publish Date star button to fav{" "}
+						<Link to="/">
+							<FontAwesomeIcon icon="star" />
+						</Link>
 					</p>
 				</div>
 			</div>
 		</div>
 	);
 }
+
+BlogCard.proptypes = {
+	title: PropTypes.string,
+	summary: PropTypes.string,
+	author: PropTypes.string,
+	date: PropTypes.string
+};
