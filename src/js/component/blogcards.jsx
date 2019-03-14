@@ -7,23 +7,22 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 library.add(faStar);
 import PropTypes from "prop-types";
 
-export default function BlogCard(title, summary, author, date) {
+export const BlogCard = ({ props }) => {
+	const { index, title, summary, author, date } = props;
 	return (
-		<div>
+		<div id={index}>
 			<div
 				className="jumbotron jumbotron-fluid"
 				style={{ backgroundColor: "white" }}>
 				<div className="container">
 					<div className="img-container float-right" />
-					<p className="font-weight-bold">#LearnToCode</p>
-					<p className="text-muted">
-						This is a modified jumbotron that occupies the entire
-						horizontal space of its parent.
-					</p>
+					<p className="font-weight-bold">{title}</p>
+					<p className="text-muted">{summary}</p>
 
-					<p className="font-weight-normal">Author name</p>
+					<p className="font-weight-normal">{author}</p>
 					<p className="text-muted">
-						Publish Date star button to fav{" "}
+						${date}
+						star button to fav{" "}
 						<Link to="/">
 							<FontAwesomeIcon icon="star" />
 						</Link>
@@ -32,11 +31,13 @@ export default function BlogCard(title, summary, author, date) {
 			</div>
 		</div>
 	);
-}
+};
 
-BlogCard.proptypes = {
-	title: PropTypes.string,
-	summary: PropTypes.string,
-	author: PropTypes.string,
-	date: PropTypes.string
+BlogCard.propTypes = {
+	props: PropTypes.object.isRequired,
+	index: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired,
+	summary: PropTypes.string.isRequired,
+	author: PropTypes.string.isRequired,
+	date: PropTypes.string.isRequired
 };
